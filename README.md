@@ -1,10 +1,10 @@
 # spring-tutorial-23rd
 
---- 
+
 
 ## 1️⃣ spring이 지원하는 기술들(IoC/DI, AOP, PSA 등)
 
----
+
 - **IoC(제어권의 역전)**: 제어권이 스프링 프레임워크에 있어 개발자가 제어권을 가지지 않음
     - 객체의 생성과 의존성 관리를 개발자가 아닌 스프링 컨테이너가 담당
 
@@ -36,7 +36,7 @@
 
 ## 2️⃣ Spring Bean 이 무엇이고, Bean 의 라이프사이클과 Bean Scope에 대해 조사해요
 
----
+
 - **Spring Bean**: 스프링 프레임워크 내부에서 관리되는 객체
     - ex) UserService라는 클래스를 만들고 이것을 스프링 빈으로 등록하면 스프링 컨테이너가 그 객체의 생애 주기(생성, 소멸)를 관리
 - **Spring Bean을 등록하는 방법**
@@ -77,7 +77,7 @@
 
 ## 3️⃣ 스프링에서 어노테이션을 통해 Bean을 등록할 때, 어떤 일련의 과정이 일어날까?
 
----
+
 1. **스캐닝 (Scanning)**
     - `@SpringBootApplication` 혹은 `@ComponentScan`이 설정된 메인 클래스가 실행되면, 지정된 패키지 경로를 전수 조사
     - 대상: `@Component`, `@Service`, `@Repository`, `@Controller`, `@Configuration` 등 `@Component`를 메타 어노테이션으로 가진 모든 클래스
@@ -132,7 +132,7 @@
 ---
 ## 4️⃣ Spring MVC 심층 분석
 
----
+
 
 - ### **MVC 패턴 vs Spring MVC**
     - **MVC 패턴 (이론적 개념)**: 소프트웨어 디자인 패턴 중 하나로, 애플리케이션의 역할을 세 가지로 나누어 관리
@@ -149,7 +149,7 @@
     - **Servlet**: 자바를 사용하여 웹 페이지를 **동적**으로 생성하는 서버 측 프로그램
         - **스레드 방식:** 요청이 올 때마다 프로세스를 새로 만드는 게 아니라, 기존 프로세스 안에서 스레드를 생성해 처리하므로 효율적
 - **웹 요청 처리 과정**
-![img_1.png](img_1.png)
+<img width="1268" height="526" alt="Image" src="https://github.com/user-attachments/assets/20711100-ff85-40ff-8b4f-a87120eb45ef" />
 
 1. 사용자(클라이언트)가 URL을 입력하면 HTTP Request가 servlet Container로 전송
 2. 요청을 전송받은 Servlet Container는 HttpServletRequest, HttpServletResponse 객체를 생성
@@ -173,7 +173,8 @@
         - **뷰 렌더링 중계:** 컨트롤러가 반환한 논리적인 뷰 이름을 실제 화면으로 연결
     - **DispatcherServlet 동작 흐름**
 
-![img.png](img.png)
+<img width="1884" height="922" alt="Image" src="https://github.com/user-attachments/assets/01934fdd-0ca5-4723-93eb-ca52153a4719" />
+
 1. **클라이언트 요청:** 사용자가 웹브라우저나 앱을 통해 HTTP 요청을 보내고 가장 먼저 **Dispatcher Servlet**이 요청을 받음
 2. **Handler Mapping:** Dispatcher Servlet은 이 URL 주소와 HTTP 메서드(GET, POST 등)를 처리할 컨트롤러가 누구인지를 찾기 위해 **Handler Mapping**에 조회를 요청
 3. **Handler Adapter:** 찾은 Handler(컨트롤러)를 실행해 줄 수 있는 **Handler Adapter**를 찾음
